@@ -2,4 +2,4 @@
 *.db-journal
 
 __pycache__/
-docs_text/*
+docs_text/*.txt
