@@ -64,7 +64,7 @@ That’s all you need for a full run using the sample PDFs in `docs/`.
   - `TEXT_DOCS_FOLDER = "./docs_text"`
 
 3) Convert PDFs to text
-- Uses `pdfminer.six` to extract text from every file in `docs/` and saves to `docs_text/<filename>.txt`.
+- Uses `pdfminer.six` to extract text from every file in `docs/` and saves to `docs_text/<filename>.txt`. Split the documents into paragraph chunks.
 
 4) Create SQLite database and load `sqlite-vec`
 - Creates `metu_academic.db`.
