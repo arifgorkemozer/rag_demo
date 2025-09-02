@@ -18,12 +18,13 @@ Required Python 3.11+.
 
 ### Prerequisites
 
+- Windows 11, Ubuntu 22.04+ or macOS 15 Sequoia
 - Python 3.11 or newer
 - pip
 
 ### Quickstart
 
-1) Create and activate a virtual environment (Windows cmd):
+1) Create and activate a virtual environment using terminal (or cmd in Windows):
 
 ```bat
 python -m venv .venv
@@ -47,6 +48,7 @@ pdfminer
 pdfminer.six
 sqlite-vec==0.1.1
 fastembed==0.3.4
+rank-bm25==0.2.2
 ```
 
 That’s all you need for a full run using the sample PDFs in `docs/`.
