@@ -107,30 +107,19 @@ CREATE VIRTUAL TABLE document_embeddings USING vec0(
   - Payload contains `prompt`, `model_id`, and `engine`
 - Prints the generated answer.
 
-### Run with your own question
-
-- In the notebook, set:
-
-```python
-user_prompt = "<your question>"
-NUM_OF_EXAMPLES = 5  # or another k
-```
-
-- Re-run from “Search similar documents and generate enriched LLM prompt”.
-
-### Add new PDFs or re-index
-
-1) Drop new PDF files into `docs/`.
-2) Re-run from the “Convert PDF documents to .txt documents” cell to regenerate `docs_text/`.
-3) Re-run database creation, metadata population, and embedding cells to refresh the index.
-
 ### Configuration
 
 - `DB_NAME`: SQLite file name prefix (actual file is `<DB_NAME>.db`).
 - `TABLE_NAME`: Metadata table with paragraph texts.
 - `ORIG_DOCS_FOLDER`, `TEXT_DOCS_FOLDER`: Input and output folders for document conversion.
-- `NUM_OF_EXAMPLES`: Top-k retrieved paragraphs for augmentation.
-- `model_id`, `engine`: Model configuration passed to the inference service.
+- `NUM_OF_EXAMPLES`: Top-k retrieved paragraphs for augmentation. e.g. 5
+- `MODEL_ID`: LLM id. e.g. "Qwen/Qwen2.5-Coder-7B-Instruct"
+
+### Add more context to the LLM with new PDF files
+
+- If you would like to add more documents to add more context to the model, you can add new PDF files to `docs/` folder incrementally.
+- Each time a new PDF file is added to the `docs/` folder, run "Convert not processed PDF documents to .txt documents" and 
+"Add new paragraphs and their embeddings to the database" steps and continue with new inference execution.
 
 ### Troubleshooting
 
